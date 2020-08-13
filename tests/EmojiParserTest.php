@@ -10,6 +10,7 @@
 
 namespace ElGigi\CommonMarkEmoji\Tests;
 
+use ElGigi\CommonMarkEmoji\Emoji;
 use ElGigi\CommonMarkEmoji\EmojiParser;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
@@ -17,10 +18,27 @@ use PHPUnit\Framework\TestCase;
 
 class EmojiParserTest extends TestCase
 {
-    public function testEmojiParser(): void
+    public function emojiProvider(): array
     {
-        $input    = 'Foo :smile: bar';
-        $expected = "<p>Foo \u{1f604} bar</p>";
+        return
+            array_map(
+                function ($code, $utf8) {
+                    return [$code, $utf8];
+                },
+                array_keys(Emoji::$codes),
+                array_values(Emoji::$codes)
+            );
+    }
+
+    /**
+     * @param $actual
+     * @param $expected
+     * @dataProvider emojiProvider
+     */
+    public function testEmojiParser($actual, $expected)
+    {
+        $input = sprintf('Foo :%s: bar', $actual);
+        $expected = sprintf("<p>Foo %s bar</p>", $expected);
 
         $emojiParser = new EmojiParser();
 
@@ -34,7 +52,7 @@ class EmojiParserTest extends TestCase
 
     public function testEmojiParserWithBadText(): void
     {
-        $input    = 'Foo :smile test smile: bar';
+        $input = 'Foo :smile test smile: bar';
         $expected = "<p>Foo :smile test smile: bar</p>";
 
         $emojiParser = new EmojiParser();
