@@ -1,0 +1,17 @@
+dist: trusty
+sudo: required
+language: php
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - 8.0
+
+before_install:
+  - sudo apt-get -qq update
+
+before_script:
+  - composer self-update
+  - composer install
+
+script: vendor/bin/phpunit
