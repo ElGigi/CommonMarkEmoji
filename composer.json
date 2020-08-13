@@ -3,7 +3,7 @@
   "description": "CommonMark extension adds UTF-8 emoji with Github tag for the `league/commonmark` PHP Markdown parsing engine, based on the CommonMark spec.",
   "license": "MIT",
   "version": "1.0.0",
-  "type": "library",
+  "type": "commonmark-extension",
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
