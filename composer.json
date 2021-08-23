@@ -2,7 +2,7 @@
   "name": "elgigi/commonmark-emoji",
   "description": "CommonMark extension adds UTF-8 emoji with Github tag for the `league/commonmark` PHP Markdown parsing engine, based on the CommonMark spec.",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "commonmark-extension",
   "minimum-stability": "stable",
   "autoload": {
@@ -16,10 +16,10 @@
     }
   },
   "require": {
-    "php": "^7.2 || ^8.0",
-    "league/commonmark": "^1.0"
+    "php": "^7.4 || ^8.0",
+    "league/commonmark": "^2.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^8.0 || ^9.0"
+    "phpunit/phpunit": "^9.5"
   }
 }

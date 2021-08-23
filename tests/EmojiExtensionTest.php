@@ -1,7 +1,7 @@
 <?php
 /*
  * @license   https://opensource.org/licenses/MIT MIT License
- * @copyright 2020 Ronan GIRON
+ * @copyright 2021 Ronan GIRON
  * @author    Ronan GIRON <https://github.com/ElGigi>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -11,16 +11,16 @@
 namespace ElGigi\CommonMarkEmoji\Tests;
 
 use ElGigi\CommonMarkEmoji\EmojiParser;
-use League\CommonMark\Environment;
+use League\CommonMark\Environment\Environment;
 use PHPUnit\Framework\TestCase;
 
 class EmojiExtensionTest extends TestCase
 {
     public function test()
     {
-        $environment = Environment::createCommonMarkEnvironment();
+        $environment = new Environment();
         $environment->addInlineParser($parser = new EmojiParser());
 
-        $this->assertContains($parser, $environment->getInlineParsersForCharacter(':'));
+        $this->assertContains($parser, $environment->getInlineParsers());
     }
 }

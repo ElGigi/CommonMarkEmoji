@@ -16,6 +16,8 @@ You can install the client with [Composer](https://getcomposer.org/):
 composer require elgigi/commonmark-emoji
 ```
 
+**Version 2.x of the extension is designed for league/commonmark 2.x. Use version 1 for league/commonmark 1.x.**
+
 ## Usage
 
 Extension can be added to any new Environment:
@@ -25,14 +27,9 @@ use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
 use ElGigi\CommonMarkEmoji\EmojiExtension;
 
-// Obtain a pre-configured Environment with all the CommonMark parsers/renderers ready-to-go
-$environment = Environment::createCommonMarkEnvironment();
+$converter = new CommonMarkConverter();
+$converter->getEnvironment()->addExtension(new EmojiExtension());
 
-// Add this extension
-$environment->addExtension(new EmojiExtension());
-
-// Instantiate the converter engine and start converting some Markdown!
-$converter = new CommonMarkConverter($config, $environment);
 echo $converter->convertToHtml('This extension is great :smile:!');
 ```
 

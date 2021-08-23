@@ -1,7 +1,7 @@
 <?php
 /*
  * @license   https://opensource.org/licenses/MIT MIT License
- * @copyright 2020 Ronan GIRON
+ * @copyright 2021 Ronan GIRON
  * @author    Ronan GIRON <https://github.com/ElGigi>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -12,15 +12,20 @@ declare(strict_types=1);
 
 namespace ElGigi\CommonMarkEmoji;
 
-use League\CommonMark\Inline\Element\Text;
-use League\CommonMark\Inline\Parser\InlineParserInterface;
-use League\CommonMark\InlineParserContext;
+use League\CommonMark\Node\Inline\Text;
+use League\CommonMark\Parser\Inline\InlineParserInterface;
+use League\CommonMark\Parser\Inline\InlineParserMatch;
+use League\CommonMark\Parser\InlineParserContext;
 
 final class EmojiParser implements InlineParserInterface
 {
-    public function getCharacters(): array
+    public function getMatchDefinition(): InlineParserMatch
     {
-        return [':'];
+        return InlineParserMatch::join(
+            InlineParserMatch::string(':'),
+            InlineParserMatch::regex('[\w\-+]+'),
+            InlineParserMatch::string(':'),
+        );
     }
 
     public function parse(InlineParserContext $inlineContext): bool

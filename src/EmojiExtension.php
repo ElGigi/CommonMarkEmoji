@@ -1,7 +1,7 @@
 <?php
 /*
  * @license   https://opensource.org/licenses/MIT MIT License
- * @copyright 2020 Ronan GIRON
+ * @copyright 2021 Ronan GIRON
  * @author    Ronan GIRON <https://github.com/ElGigi>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -12,15 +12,12 @@ declare(strict_types=1);
 
 namespace ElGigi\CommonMarkEmoji;
 
-use League\CommonMark\ConfigurableEnvironmentInterface;
+use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Extension\ExtensionInterface;
 
 final class EmojiExtension implements ExtensionInterface
 {
-    /**
-     * @inheritDoc
-     */
-    public function register(ConfigurableEnvironmentInterface $environment)
+    public function register(EnvironmentBuilderInterface $environment): void
     {
         $environment->addInlineParser(new EmojiParser());
     }

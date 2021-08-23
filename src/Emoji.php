@@ -1,7 +1,7 @@
 <?php
 /*
  * @license   https://opensource.org/licenses/MIT MIT License
- * @copyright 2020 Ronan GIRON
+ * @copyright 2021 Ronan GIRON
  * @author    Ronan GIRON <https://github.com/ElGigi>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -14,7 +14,7 @@ namespace ElGigi\CommonMarkEmoji;
 
 final class Emoji
 {
-    public static $codes = [
+    public static array $codes = [
         "+1" => "\u{1f44d}",
         "-1" => "\u{1f44e}",
         "100" => "\u{1f4af}",

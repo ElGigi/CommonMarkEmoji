@@ -1,7 +1,7 @@
 <?php
 /*
  * @license   https://opensource.org/licenses/MIT MIT License
- * @copyright 2020 Ronan GIRON
+ * @copyright 2021 Ronan GIRON
  * @author    Ronan GIRON <https://github.com/ElGigi>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -13,8 +13,9 @@ namespace ElGigi\CommonMarkEmoji\Tests;
 use ElGigi\CommonMarkEmoji\Emoji;
 use ElGigi\CommonMarkEmoji\EmojiParser;
 use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
 use PHPUnit\Framework\TestCase;
+
+use function rtrim;
 
 class EmojiParserTest extends TestCase
 {
@@ -33,6 +34,7 @@ class EmojiParserTest extends TestCase
     /**
      * @param $actual
      * @param $expected
+     *
      * @dataProvider emojiProvider
      */
     public function testEmojiParser($actual, $expected)
@@ -42,12 +44,10 @@ class EmojiParserTest extends TestCase
 
         $emojiParser = new EmojiParser();
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addInlineParser($emojiParser);
+        $converter = new CommonMarkConverter([]);
+        $converter->getEnvironment()->addInlineParser($emojiParser);
 
-        $converter = new CommonMarkConverter([], $environment);
-
-        $this->assertEquals($expected, \rtrim($converter->convertToHtml($input)));
+        $this->assertEquals($expected, rtrim($converter->convertToHtml($input)));
     }
 
     public function testEmojiParserWithBadText(): void
@@ -57,11 +57,9 @@ class EmojiParserTest extends TestCase
 
         $emojiParser = new EmojiParser();
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addInlineParser($emojiParser);
+        $converter = new CommonMarkConverter([]);
+        $converter->getEnvironment()->addInlineParser($emojiParser);
 
-        $converter = new CommonMarkConverter([], $environment);
-
-        $this->assertEquals($expected, \rtrim($converter->convertToHtml($input)));
+        $this->assertEquals($expected, rtrim($converter->convertToHtml($input)));
     }
 }
