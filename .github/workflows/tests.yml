@@ -1,0 +1,42 @@
+name: Tests
+
+on:
+    push: ~
+    pull_request: ~
+
+jobs:
+    phpunit:
+        name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }}
+        runs-on: ubuntu-latest
+        continue-on-error: ${{ !matrix.stable }}
+        strategy:
+            matrix:
+                php-versions: ['7.4', '8.0']
+                stable: [true]
+                coverage: [true]
+                composer-flags: ['']
+                include:
+                    - php-versions: '8.1'
+                      stable: false
+                      coverage: false
+                      composer-flags: '--ignore-platform-reqs'
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+
+            - uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-versions }}
+                  extensions: curl, mbstring
+                  coverage: xdebug
+                  tools: composer:v2
+
+            - run: composer update --no-progress ${{ matrix.composer-flags }}
+
+            - run: vendor/bin/phpunit --no-coverage
+              if: ${{ !matrix.coverage }}
+
+            - run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+              if: ${{ matrix.coverage }}
