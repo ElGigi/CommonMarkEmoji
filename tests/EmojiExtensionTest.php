@@ -10,12 +10,21 @@
 
 namespace ElGigi\CommonMarkEmoji\Tests;
 
+use ElGigi\CommonMarkEmoji\EmojiExtension;
 use ElGigi\CommonMarkEmoji\EmojiParser;
 use League\CommonMark\Environment\Environment;
 use PHPUnit\Framework\TestCase;
 
 class EmojiExtensionTest extends TestCase
 {
+    public function testRegister()
+    {
+        $environment = new Environment();
+        $environment->addExtension($extension = new EmojiExtension());
+
+        $this->assertContains($extension, $environment->getExtensions());
+    }
+
     public function test()
     {
         $environment = new Environment();
