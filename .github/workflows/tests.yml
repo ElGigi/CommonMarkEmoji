@@ -11,15 +11,10 @@ jobs:
         continue-on-error: ${{ !matrix.stable }}
         strategy:
             matrix:
-                php-versions: ['7.4', '8.0']
+                php-versions: ['7.4', '8.0', '8.1']
                 stable: [true]
                 coverage: [true]
                 composer-flags: ['']
-                include:
-                    - php-versions: '8.1'
-                      stable: false
-                      coverage: false
-                      composer-flags: '--ignore-platform-reqs'
 
         steps:
             - uses: actions/checkout@v2
@@ -35,8 +30,8 @@ jobs:
 
             - run: composer update --no-progress ${{ matrix.composer-flags }}
 
-            - run: vendor/bin/phpunit --no-coverage
+            - run: vendor/bin/phpunit --testsuite=test --no-coverage
               if: ${{ !matrix.coverage }}
 
-            - run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+            - run: vendor/bin/phpunit --testsuite=test --coverage-text --coverage-clover=coverage.clover
               if: ${{ matrix.coverage }}
