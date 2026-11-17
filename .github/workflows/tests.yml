@@ -6,32 +6,23 @@ on:
 
 jobs:
     phpunit:
-        name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }}
+        name: PHPUnit on ${{ matrix.php-versions }}
         runs-on: ubuntu-latest
-        continue-on-error: ${{ !matrix.stable }}
         strategy:
+            fail-fast: false
             matrix:
                 php-versions: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6']
-                stable: [true]
-                coverage: [true]
-                composer-flags: ['']
 
         steps:
-            - uses: actions/checkout@v4
-              with:
-                fetch-depth: 0
+            - uses: actions/checkout@v7
 
             - uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php-versions }}
-                  extensions: curl, mbstring
+                  extensions: mbstring, iconv
                   coverage: xdebug
                   tools: composer:v2
 
-            - run: composer update --no-progress ${{ matrix.composer-flags }}
+            - run: composer update --no-progress
 
-            - run: vendor/bin/phpunit --testsuite=test --no-coverage
-              if: ${{ !matrix.coverage }}
-
-            - run: vendor/bin/phpunit --testsuite=test --coverage-text --coverage-clover=coverage.clover
-              if: ${{ matrix.coverage }}
+            - run: vendor/bin/phpunit --testsuite=test --coverage-text
