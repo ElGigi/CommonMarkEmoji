@@ -24,13 +24,13 @@ Extension can be added to any new Environment:
 
 ```php
 use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
 use ElGigi\CommonMarkEmoji\EmojiExtension;
 
 $converter = new CommonMarkConverter();
 $converter->getEnvironment()->addExtension(new EmojiExtension());
 
-echo $converter->convertToHtml('This extension is great :smile:!');
+echo $converter->convert('This extension is great :smile:!');
+// <p>This extension is great 😄!</p>
 ```
 
 An emoji code is replaced when it is not glued to a letter or a digit:
