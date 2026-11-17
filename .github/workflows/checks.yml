@@ -3,6 +3,7 @@ name: Checks
 on:
   schedule:
     - cron: 0 10 1,15 * *
+  workflow_dispatch: ~
 
 jobs:
   phpunit:

@@ -21,9 +21,9 @@
   },
   "require-dev": {
     "ext-json": "*",
+    "ext-mbstring": "*",
     "ext-iconv": "*",
-    "phpunit/phpunit": "^9.5",
-    "berlioz/http-client": "^1.0 || ^2.0"
+    "phpunit/phpunit": "^9.5"
   },
   "scripts": {
     "update-emoji": "php bin/update-emoji.php"
