@@ -33,6 +33,17 @@ $converter->getEnvironment()->addExtension(new EmojiExtension());
 echo $converter->convertToHtml('This extension is great :smile:!');
 ```
 
+## Updating the emoji list
+
+The list of emoji follows the [GitHub emoji](https://api.github.com/emojis) (custom images such as `:octocat:`
+are not supported) and is generated from the [gemoji](https://github.com/github/gemoji) database:
+
+```bash
+composer update-emoji
+```
+
+This command regenerates `src/Emoji.php` and the list below.
+
 ## Emoji list
 
 | Code                                     | Emoji                                  |
@@ -51,6 +62,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:abc:`                                  | :abc:                                  |
 | `:abcd:`                                 | :abcd:                                 |
 | `:accept:`                               | :accept:                               |
+| `:accordion:`                            | :accordion:                            |
 | `:adhesive_bandage:`                     | :adhesive_bandage:                     |
 | `:adult:`                                | :adult:                                |
 | `:aerial_tramway:`                       | :aerial_tramway:                       |
@@ -65,6 +77,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:ambulance:`                            | :ambulance:                            |
 | `:american_samoa:`                       | :american_samoa:                       |
 | `:amphora:`                              | :amphora:                              |
+| `:anatomical_heart:`                     | :anatomical_heart:                     |
 | `:anchor:`                               | :anchor:                               |
 | `:andorra:`                              | :andorra:                              |
 | `:angel:`                                | :angel:                                |
@@ -159,8 +172,10 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:bathtub:`                              | :bathtub:                              |
 | `:battery:`                              | :battery:                              |
 | `:beach_umbrella:`                       | :beach_umbrella:                       |
+| `:beans:`                                | :beans:                                |
 | `:bear:`                                 | :bear:                                 |
 | `:bearded_person:`                       | :bearded_person:                       |
+| `:beaver:`                               | :beaver:                               |
 | `:bed:`                                  | :bed:                                  |
 | `:bee:`                                  | :bee:                                  |
 | `:beer:`                                 | :beer:                                 |
@@ -171,6 +186,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:belgium:`                              | :belgium:                              |
 | `:belize:`                               | :belize:                               |
 | `:bell:`                                 | :bell:                                 |
+| `:bell_pepper:`                          | :bell_pepper:                          |
 | `:bellhop_bell:`                         | :bellhop_bell:                         |
 | `:benin:`                                | :benin:                                |
 | `:bento:`                                | :bento:                                |
@@ -186,6 +202,10 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:biohazard:`                            | :biohazard:                            |
 | `:bird:`                                 | :bird:                                 |
 | `:birthday:`                             | :birthday:                             |
+| `:bison:`                                | :bison:                                |
+| `:biting_lip:`                           | :biting_lip:                           |
+| `:black_bird:`                           | :black_bird:                           |
+| `:black_cat:`                            | :black_cat:                            |
 | `:black_circle:`                         | :black_circle:                         |
 | `:black_flag:`                           | :black_flag:                           |
 | `:black_heart:`                          | :black_heart:                          |
@@ -206,6 +226,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:blue_car:`                             | :blue_car:                             |
 | `:blue_heart:`                           | :blue_heart:                           |
 | `:blue_square:`                          | :blue_square:                          |
+| `:blueberries:`                          | :blueberries:                          |
 | `:blush:`                                | :blush:                                |
 | `:boar:`                                 | :boar:                                 |
 | `:boat:`                                 | :boat:                                 |
@@ -217,6 +238,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:bookmark_tabs:`                        | :bookmark_tabs:                        |
 | `:books:`                                | :books:                                |
 | `:boom:`                                 | :boom:                                 |
+| `:boomerang:`                            | :boomerang:                            |
 | `:boot:`                                 | :boot:                                 |
 | `:bosnia_herzegovina:`                   | :bosnia_herzegovina:                   |
 | `:botswana:`                             | :botswana:                             |
@@ -250,6 +272,9 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:brown_heart:`                          | :brown_heart:                          |
 | `:brown_square:`                         | :brown_square:                         |
 | `:brunei:`                               | :brunei:                               |
+| `:bubble_tea:`                           | :bubble_tea:                           |
+| `:bubbles:`                              | :bubbles:                              |
+| `:bucket:`                               | :bucket:                               |
 | `:bug:`                                  | :bug:                                  |
 | `:building_construction:`                | :building_construction:                |
 | `:bulb:`                                 | :bulb:                                 |
@@ -293,6 +318,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:card_index_dividers:`                  | :card_index_dividers:                  |
 | `:caribbean_netherlands:`                | :caribbean_netherlands:                |
 | `:carousel_horse:`                       | :carousel_horse:                       |
+| `:carpentry_saw:`                        | :carpentry_saw:                        |
 | `:carrot:`                               | :carrot:                               |
 | `:cartwheeling:`                         | :cartwheeling:                         |
 | `:cat:`                                  | :cat:                                  |
@@ -376,11 +402,13 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:clubs:`                                | :clubs:                                |
 | `:cn:`                                   | :cn:                                   |
 | `:coat:`                                 | :coat:                                 |
+| `:cockroach:`                            | :cockroach:                            |
 | `:cocktail:`                             | :cocktail:                             |
 | `:coconut:`                              | :coconut:                              |
 | `:cocos_islands:`                        | :cocos_islands:                        |
 | `:coffee:`                               | :coffee:                               |
 | `:coffin:`                               | :coffin:                               |
+| `:coin:`                                 | :coin:                                 |
 | `:cold_face:`                            | :cold_face:                            |
 | `:cold_sweat:`                           | :cold_sweat:                           |
 | `:collision:`                            | :collision:                            |
@@ -408,6 +436,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:cool:`                                 | :cool:                                 |
 | `:cop:`                                  | :cop:                                  |
 | `:copyright:`                            | :copyright:                            |
+| `:coral:`                                | :coral:                                |
 | `:corn:`                                 | :corn:                                 |
 | `:costa_rica:`                           | :costa_rica:                           |
 | `:cote_divoire:`                         | :cote_divoire:                         |
@@ -437,6 +466,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:crossed_flags:`                        | :crossed_flags:                        |
 | `:crossed_swords:`                       | :crossed_swords:                       |
 | `:crown:`                                | :crown:                                |
+| `:crutch:`                               | :crutch:                               |
 | `:cry:`                                  | :cry:                                  |
 | `:crying_cat_face:`                      | :crying_cat_face:                      |
 | `:crystal_ball:`                         | :crystal_ball:                         |
@@ -487,6 +517,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:diego_garcia:`                         | :diego_garcia:                         |
 | `:disappointed:`                         | :disappointed:                         |
 | `:disappointed_relieved:`                | :disappointed_relieved:                |
+| `:disguised_face:`                       | :disguised_face:                       |
 | `:diving_mask:`                          | :diving_mask:                          |
 | `:diya_lamp:`                            | :diya_lamp:                            |
 | `:dizzy:`                                | :dizzy:                                |
@@ -494,6 +525,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:djibouti:`                             | :djibouti:                             |
 | `:dna:`                                  | :dna:                                  |
 | `:do_not_litter:`                        | :do_not_litter:                        |
+| `:dodo:`                                 | :dodo:                                 |
 | `:dog:`                                  | :dog:                                  |
 | `:dog2:`                                 | :dog2:                                 |
 | `:dollar:`                               | :dollar:                               |
@@ -501,7 +533,9 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:dolphin:`                              | :dolphin:                              |
 | `:dominica:`                             | :dominica:                             |
 | `:dominican_republic:`                   | :dominican_republic:                   |
+| `:donkey:`                               | :donkey:                               |
 | `:door:`                                 | :door:                                 |
+| `:dotted_line_face:`                     | :dotted_line_face:                     |
 | `:doughnut:`                             | :doughnut:                             |
 | `:dove:`                                 | :dove:                                 |
 | `:dragon:`                               | :dragon:                               |
@@ -534,10 +568,12 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:el_salvador:`                          | :el_salvador:                          |
 | `:electric_plug:`                        | :electric_plug:                        |
 | `:elephant:`                             | :elephant:                             |
+| `:elevator:`                             | :elevator:                             |
 | `:elf:`                                  | :elf:                                  |
 | `:elf_man:`                              | :elf_man:                              |
 | `:elf_woman:`                            | :elf_woman:                            |
 | `:email:`                                | :email:                                |
+| `:empty_nest:`                           | :empty_nest:                           |
 | `:end:`                                  | :end:                                  |
 | `:england:`                              | :england:                              |
 | `:envelope:`                             | :envelope:                             |
@@ -560,7 +596,14 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:eye_speech_bubble:`                    | :eye_speech_bubble:                    |
 | `:eyeglasses:`                           | :eyeglasses:                           |
 | `:eyes:`                                 | :eyes:                                 |
+| `:face_exhaling:`                        | :face_exhaling:                        |
+| `:face_holding_back_tears:`              | :face_holding_back_tears:              |
+| `:face_in_clouds:`                       | :face_in_clouds:                       |
+| `:face_with_diagonal_mouth:`             | :face_with_diagonal_mouth:             |
 | `:face_with_head_bandage:`               | :face_with_head_bandage:               |
+| `:face_with_open_eyes_and_hand_over_mouth:` | :face_with_open_eyes_and_hand_over_mouth: |
+| `:face_with_peeking_eye:`                | :face_with_peeking_eye:                |
+| `:face_with_spiral_eyes:`                | :face_with_spiral_eyes:                |
 | `:face_with_thermometer:`                | :face_with_thermometer:                |
 | `:facepalm:`                             | :facepalm:                             |
 | `:facepunch:`                            | :facepunch:                            |
@@ -603,6 +646,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:fast_forward:`                         | :fast_forward:                         |
 | `:fax:`                                  | :fax:                                  |
 | `:fearful:`                              | :fearful:                              |
+| `:feather:`                              | :feather:                              |
 | `:feet:`                                 | :feet:                                 |
 | `:female_detective:`                     | :female_detective:                     |
 | `:female_sign:`                          | :female_sign:                          |
@@ -636,6 +680,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:flamingo:`                             | :flamingo:                             |
 | `:flashlight:`                           | :flashlight:                           |
 | `:flat_shoe:`                            | :flat_shoe:                            |
+| `:flatbread:`                            | :flatbread:                            |
 | `:fleur_de_lis:`                         | :fleur_de_lis:                         |
 | `:flight_arrival:`                       | :flight_arrival:                       |
 | `:flight_departure:`                     | :flight_departure:                     |
@@ -643,10 +688,14 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:floppy_disk:`                          | :floppy_disk:                          |
 | `:flower_playing_cards:`                 | :flower_playing_cards:                 |
 | `:flushed:`                              | :flushed:                              |
+| `:flute:`                                | :flute:                                |
+| `:fly:`                                  | :fly:                                  |
 | `:flying_disc:`                          | :flying_disc:                          |
 | `:flying_saucer:`                        | :flying_saucer:                        |
 | `:fog:`                                  | :fog:                                  |
 | `:foggy:`                                | :foggy:                                |
+| `:folding_hand_fan:`                     | :folding_hand_fan:                     |
+| `:fondue:`                               | :fondue:                               |
 | `:foot:`                                 | :foot:                                 |
 | `:football:`                             | :football:                             |
 | `:footprints:`                           | :footprints:                           |
@@ -694,6 +743,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:gibraltar:`                            | :gibraltar:                            |
 | `:gift:`                                 | :gift:                                 |
 | `:gift_heart:`                           | :gift_heart:                           |
+| `:ginger_root:`                          | :ginger_root:                          |
 | `:giraffe:`                              | :giraffe:                              |
 | `:girl:`                                 | :girl:                                 |
 | `:globe_with_meridians:`                 | :globe_with_meridians:                 |
@@ -705,6 +755,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:golfing:`                              | :golfing:                              |
 | `:golfing_man:`                          | :golfing_man:                          |
 | `:golfing_woman:`                        | :golfing_woman:                        |
+| `:goose:`                                | :goose:                                |
 | `:gorilla:`                              | :gorilla:                              |
 | `:grapes:`                               | :grapes:                               |
 | `:greece:`                               | :greece:                               |
@@ -717,6 +768,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:greenland:`                            | :greenland:                            |
 | `:grenada:`                              | :grenada:                              |
 | `:grey_exclamation:`                     | :grey_exclamation:                     |
+| `:grey_heart:`                           | :grey_heart:                           |
 | `:grey_question:`                        | :grey_question:                        |
 | `:grimacing:`                            | :grimacing:                            |
 | `:grin:`                                 | :grin:                                 |
@@ -734,6 +786,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:guitar:`                               | :guitar:                               |
 | `:gun:`                                  | :gun:                                  |
 | `:guyana:`                               | :guyana:                               |
+| `:hair_pick:`                            | :hair_pick:                            |
 | `:haircut:`                              | :haircut:                              |
 | `:haircut_man:`                          | :haircut_man:                          |
 | `:haircut_woman:`                        | :haircut_woman:                        |
@@ -742,9 +795,11 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:hammer:`                               | :hammer:                               |
 | `:hammer_and_pick:`                      | :hammer_and_pick:                      |
 | `:hammer_and_wrench:`                    | :hammer_and_wrench:                    |
+| `:hamsa:`                                | :hamsa:                                |
 | `:hamster:`                              | :hamster:                              |
 | `:hand:`                                 | :hand:                                 |
 | `:hand_over_mouth:`                      | :hand_over_mouth:                      |
+| `:hand_with_index_finger_and_thumb_crossed:` | :hand_with_index_finger_and_thumb_crossed: |
 | `:handbag:`                              | :handbag:                              |
 | `:handball_person:`                      | :handball_person:                      |
 | `:handshake:`                            | :handshake:                            |
@@ -753,6 +808,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:hatched_chick:`                        | :hatched_chick:                        |
 | `:hatching_chick:`                       | :hatching_chick:                       |
 | `:headphones:`                           | :headphones:                           |
+| `:headstone:`                            | :headstone:                            |
 | `:health_worker:`                        | :health_worker:                        |
 | `:hear_no_evil:`                         | :hear_no_evil:                         |
 | `:heard_mcdonald_islands:`               | :heard_mcdonald_islands:               |
@@ -760,12 +816,15 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:heart_decoration:`                     | :heart_decoration:                     |
 | `:heart_eyes:`                           | :heart_eyes:                           |
 | `:heart_eyes_cat:`                       | :heart_eyes_cat:                       |
+| `:heart_hands:`                          | :heart_hands:                          |
+| `:heart_on_fire:`                        | :heart_on_fire:                        |
 | `:heartbeat:`                            | :heartbeat:                            |
 | `:heartpulse:`                           | :heartpulse:                           |
 | `:hearts:`                               | :hearts:                               |
 | `:heavy_check_mark:`                     | :heavy_check_mark:                     |
 | `:heavy_division_sign:`                  | :heavy_division_sign:                  |
 | `:heavy_dollar_sign:`                    | :heavy_dollar_sign:                    |
+| `:heavy_equals_sign:`                    | :heavy_equals_sign:                    |
 | `:heavy_exclamation_mark:`               | :heavy_exclamation_mark:               |
 | `:heavy_heart_exclamation:`              | :heavy_heart_exclamation:              |
 | `:heavy_minus_sign:`                     | :heavy_minus_sign:                     |
@@ -786,6 +845,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:honey_pot:`                            | :honey_pot:                            |
 | `:honeybee:`                             | :honeybee:                             |
 | `:hong_kong:`                            | :hong_kong:                            |
+| `:hook:`                                 | :hook:                                 |
 | `:horse:`                                | :horse:                                |
 | `:horse_racing:`                         | :horse_racing:                         |
 | `:hospital:`                             | :hospital:                             |
@@ -802,6 +862,8 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:hugs:`                                 | :hugs:                                 |
 | `:hungary:`                              | :hungary:                              |
 | `:hushed:`                               | :hushed:                               |
+| `:hut:`                                  | :hut:                                  |
+| `:hyacinth:`                             | :hyacinth:                             |
 | `:ice_cream:`                            | :ice_cream:                            |
 | `:ice_cube:`                             | :ice_cube:                             |
 | `:ice_hockey:`                           | :ice_hockey:                           |
@@ -809,10 +871,12 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:icecream:`                             | :icecream:                             |
 | `:iceland:`                              | :iceland:                              |
 | `:id:`                                   | :id:                                   |
+| `:identification_card:`                  | :identification_card:                  |
 | `:ideograph_advantage:`                  | :ideograph_advantage:                  |
 | `:imp:`                                  | :imp:                                  |
 | `:inbox_tray:`                           | :inbox_tray:                           |
 | `:incoming_envelope:`                    | :incoming_envelope:                    |
+| `:index_pointing_at_the_viewer:`         | :index_pointing_at_the_viewer:         |
 | `:india:`                                | :india:                                |
 | `:indonesia:`                            | :indonesia:                            |
 | `:infinity:`                             | :infinity:                             |
@@ -834,7 +898,9 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:japanese_castle:`                      | :japanese_castle:                      |
 | `:japanese_goblin:`                      | :japanese_goblin:                      |
 | `:japanese_ogre:`                        | :japanese_ogre:                        |
+| `:jar:`                                  | :jar:                                  |
 | `:jeans:`                                | :jeans:                                |
+| `:jellyfish:`                            | :jellyfish:                            |
 | `:jersey:`                               | :jersey:                               |
 | `:jigsaw:`                               | :jigsaw:                               |
 | `:jordan:`                               | :jordan:                               |
@@ -851,6 +917,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:key:`                                  | :key:                                  |
 | `:keyboard:`                             | :keyboard:                             |
 | `:keycap_ten:`                           | :keycap_ten:                           |
+| `:khanda:`                               | :khanda:                               |
 | `:kick_scooter:`                         | :kick_scooter:                         |
 | `:kimono:`                               | :kimono:                               |
 | `:kiribati:`                             | :kiribati:                             |
@@ -866,6 +933,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:kneeling_person:`                      | :kneeling_person:                      |
 | `:kneeling_woman:`                       | :kneeling_woman:                       |
 | `:knife:`                                | :knife:                                |
+| `:knot:`                                 | :knot:                                 |
 | `:koala:`                                | :koala:                                |
 | `:koko:`                                 | :koko:                                 |
 | `:kosovo:`                               | :kosovo:                               |
@@ -875,6 +943,8 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:lab_coat:`                             | :lab_coat:                             |
 | `:label:`                                | :label:                                |
 | `:lacrosse:`                             | :lacrosse:                             |
+| `:ladder:`                               | :ladder:                               |
+| `:lady_beetle:`                          | :lady_beetle:                          |
 | `:lantern:`                              | :lantern:                              |
 | `:laos:`                                 | :laos:                                 |
 | `:large_blue_circle:`                    | :large_blue_circle:                    |
@@ -893,6 +963,8 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:left_right_arrow:`                     | :left_right_arrow:                     |
 | `:left_speech_bubble:`                   | :left_speech_bubble:                   |
 | `:leftwards_arrow_with_hook:`            | :leftwards_arrow_with_hook:            |
+| `:leftwards_hand:`                       | :leftwards_hand:                       |
+| `:leftwards_pushing_hand:`               | :leftwards_pushing_hand:               |
 | `:leg:`                                  | :leg:                                  |
 | `:lemon:`                                | :lemon:                                |
 | `:leo:`                                  | :leo:                                  |
@@ -903,6 +975,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:libra:`                                | :libra:                                |
 | `:libya:`                                | :libya:                                |
 | `:liechtenstein:`                        | :liechtenstein:                        |
+| `:light_blue_heart:`                     | :light_blue_heart:                     |
 | `:light_rail:`                           | :light_rail:                           |
 | `:link:`                                 | :link:                                 |
 | `:lion:`                                 | :lion:                                 |
@@ -915,8 +988,10 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:lock:`                                 | :lock:                                 |
 | `:lock_with_ink_pen:`                    | :lock_with_ink_pen:                    |
 | `:lollipop:`                             | :lollipop:                             |
+| `:long_drum:`                            | :long_drum:                            |
 | `:loop:`                                 | :loop:                                 |
 | `:lotion_bottle:`                        | :lotion_bottle:                        |
+| `:lotus:`                                | :lotus:                                |
 | `:lotus_position:`                       | :lotus_position:                       |
 | `:lotus_position_man:`                   | :lotus_position_man:                   |
 | `:lotus_position_woman:`                 | :lotus_position_woman:                 |
@@ -925,8 +1000,10 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:love_hotel:`                           | :love_hotel:                           |
 | `:love_letter:`                          | :love_letter:                          |
 | `:love_you_gesture:`                     | :love_you_gesture:                     |
+| `:low_battery:`                          | :low_battery:                          |
 | `:low_brightness:`                       | :low_brightness:                       |
 | `:luggage:`                              | :luggage:                              |
+| `:lungs:`                                | :lungs:                                |
 | `:luxembourg:`                           | :luxembourg:                           |
 | `:lying_face:`                           | :lying_face:                           |
 | `:m:`                                    | :m:                                    |
@@ -938,6 +1015,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:mage:`                                 | :mage:                                 |
 | `:mage_man:`                             | :mage_man:                             |
 | `:mage_woman:`                           | :mage_woman:                           |
+| `:magic_wand:`                           | :magic_wand:                           |
 | `:magnet:`                               | :magnet:                               |
 | `:mahjong:`                              | :mahjong:                              |
 | `:mailbox:`                              | :mailbox:                              |
@@ -951,15 +1029,18 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:male_sign:`                            | :male_sign:                            |
 | `:mali:`                                 | :mali:                                 |
 | `:malta:`                                | :malta:                                |
+| `:mammoth:`                              | :mammoth:                              |
 | `:man:`                                  | :man:                                  |
 | `:man_artist:`                           | :man_artist:                           |
 | `:man_astronaut:`                        | :man_astronaut:                        |
+| `:man_beard:`                            | :man_beard:                            |
 | `:man_cartwheeling:`                     | :man_cartwheeling:                     |
 | `:man_cook:`                             | :man_cook:                             |
 | `:man_dancing:`                          | :man_dancing:                          |
 | `:man_facepalming:`                      | :man_facepalming:                      |
 | `:man_factory_worker:`                   | :man_factory_worker:                   |
 | `:man_farmer:`                           | :man_farmer:                           |
+| `:man_feeding_baby:`                     | :man_feeding_baby:                     |
 | `:man_firefighter:`                      | :man_firefighter:                      |
 | `:man_health_worker:`                    | :man_health_worker:                    |
 | `:man_in_manual_wheelchair:`             | :man_in_manual_wheelchair:             |
@@ -981,12 +1062,14 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:man_with_gua_pi_mao:`                  | :man_with_gua_pi_mao:                  |
 | `:man_with_probing_cane:`                | :man_with_probing_cane:                |
 | `:man_with_turban:`                      | :man_with_turban:                      |
+| `:man_with_veil:`                        | :man_with_veil:                        |
 | `:mandarin:`                             | :mandarin:                             |
 | `:mango:`                                | :mango:                                |
 | `:mans_shoe:`                            | :mans_shoe:                            |
 | `:mantelpiece_clock:`                    | :mantelpiece_clock:                    |
 | `:manual_wheelchair:`                    | :manual_wheelchair:                    |
 | `:maple_leaf:`                           | :maple_leaf:                           |
+| `:maracas:`                              | :maracas:                              |
 | `:marshall_islands:`                     | :marshall_islands:                     |
 | `:martial_arts_uniform:`                 | :martial_arts_uniform:                 |
 | `:martinique:`                           | :martinique:                           |
@@ -1007,8 +1090,10 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:medical_symbol:`                       | :medical_symbol:                       |
 | `:mega:`                                 | :mega:                                 |
 | `:melon:`                                | :melon:                                |
+| `:melting_face:`                         | :melting_face:                         |
 | `:memo:`                                 | :memo:                                 |
 | `:men_wrestling:`                        | :men_wrestling:                        |
+| `:mending_heart:`                        | :mending_heart:                        |
 | `:menorah:`                              | :menorah:                              |
 | `:mens:`                                 | :mens:                                 |
 | `:mermaid:`                              | :mermaid:                              |
@@ -1022,10 +1107,13 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:microphone:`                           | :microphone:                           |
 | `:microscope:`                           | :microscope:                           |
 | `:middle_finger:`                        | :middle_finger:                        |
+| `:military_helmet:`                      | :military_helmet:                      |
 | `:milk_glass:`                           | :milk_glass:                           |
 | `:milky_way:`                            | :milky_way:                            |
 | `:minibus:`                              | :minibus:                              |
 | `:minidisc:`                             | :minidisc:                             |
+| `:mirror:`                               | :mirror:                               |
+| `:mirror_ball:`                          | :mirror_ball:                          |
 | `:mobile_phone_off:`                     | :mobile_phone_off:                     |
 | `:moldova:`                              | :moldova:                              |
 | `:monaco:`                               | :monaco:                               |
@@ -1041,6 +1129,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:montserrat:`                           | :montserrat:                           |
 | `:moon:`                                 | :moon:                                 |
 | `:moon_cake:`                            | :moon_cake:                            |
+| `:moose:`                                | :moose:                                |
 | `:morocco:`                              | :morocco:                              |
 | `:mortar_board:`                         | :mortar_board:                         |
 | `:mosque:`                               | :mosque:                               |
@@ -1060,6 +1149,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:mountain_snow:`                        | :mountain_snow:                        |
 | `:mouse:`                                | :mouse:                                |
 | `:mouse2:`                               | :mouse2:                               |
+| `:mouse_trap:`                           | :mouse_trap:                           |
 | `:movie_camera:`                         | :movie_camera:                         |
 | `:moyai:`                                | :moyai:                                |
 | `:mozambique:`                           | :mozambique:                           |
@@ -1070,6 +1160,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:musical_note:`                         | :musical_note:                         |
 | `:musical_score:`                        | :musical_score:                        |
 | `:mute:`                                 | :mute:                                 |
+| `:mx_claus:`                             | :mx_claus:                             |
 | `:myanmar:`                              | :myanmar:                              |
 | `:nail_care:`                            | :nail_care:                            |
 | `:name_badge:`                           | :name_badge:                           |
@@ -1082,6 +1173,8 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:negative_squared_cross_mark:`          | :negative_squared_cross_mark:          |
 | `:nepal:`                                | :nepal:                                |
 | `:nerd_face:`                            | :nerd_face:                            |
+| `:nest_with_eggs:`                       | :nest_with_eggs:                       |
+| `:nesting_dolls:`                        | :nesting_dolls:                        |
 | `:netherlands:`                          | :netherlands:                          |
 | `:neutral_face:`                         | :neutral_face:                         |
 | `:new:`                                  | :new:                                  |
@@ -1100,6 +1193,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:nigeria:`                              | :nigeria:                              |
 | `:night_with_stars:`                     | :night_with_stars:                     |
 | `:nine:`                                 | :nine:                                 |
+| `:ninja:`                                | :ninja:                                |
 | `:niue:`                                 | :niue:                                 |
 | `:no_bell:`                              | :no_bell:                              |
 | `:no_bicycles:`                          | :no_bicycles:                          |
@@ -1139,6 +1233,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:older_adult:`                          | :older_adult:                          |
 | `:older_man:`                            | :older_man:                            |
 | `:older_woman:`                          | :older_woman:                          |
+| `:olive:`                                | :olive:                                |
 | `:om:`                                   | :om:                                   |
 | `:oman:`                                 | :oman:                                 |
 | `:on:`                                   | :on:                                   |
@@ -1175,7 +1270,9 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:pakistan:`                             | :pakistan:                             |
 | `:palau:`                                | :palau:                                |
 | `:palestinian_territories:`              | :palestinian_territories:              |
+| `:palm_down_hand:`                       | :palm_down_hand:                       |
 | `:palm_tree:`                            | :palm_tree:                            |
+| `:palm_up_hand:`                         | :palm_up_hand:                         |
 | `:palms_up_together:`                    | :palms_up_together:                    |
 | `:panama:`                               | :panama:                               |
 | `:pancakes:`                             | :pancakes:                             |
@@ -1195,6 +1292,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:passport_control:`                     | :passport_control:                     |
 | `:pause_button:`                         | :pause_button:                         |
 | `:paw_prints:`                           | :paw_prints:                           |
+| `:pea_pod:`                              | :pea_pod:                              |
 | `:peace_symbol:`                         | :peace_symbol:                         |
 | `:peach:`                                | :peach:                                |
 | `:peacock:`                              | :peacock:                              |
@@ -1206,45 +1304,58 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:penguin:`                              | :penguin:                              |
 | `:pensive:`                              | :pensive:                              |
 | `:people_holding_hands:`                 | :people_holding_hands:                 |
+| `:people_hugging:`                       | :people_hugging:                       |
 | `:performing_arts:`                      | :performing_arts:                      |
 | `:persevere:`                            | :persevere:                            |
 | `:person_bald:`                          | :person_bald:                          |
 | `:person_curly_hair:`                    | :person_curly_hair:                    |
+| `:person_feeding_baby:`                  | :person_feeding_baby:                  |
 | `:person_fencing:`                       | :person_fencing:                       |
 | `:person_in_manual_wheelchair:`          | :person_in_manual_wheelchair:          |
 | `:person_in_motorized_wheelchair:`       | :person_in_motorized_wheelchair:       |
+| `:person_in_tuxedo:`                     | :person_in_tuxedo:                     |
 | `:person_red_hair:`                      | :person_red_hair:                      |
 | `:person_white_hair:`                    | :person_white_hair:                    |
+| `:person_with_crown:`                    | :person_with_crown:                    |
 | `:person_with_probing_cane:`             | :person_with_probing_cane:             |
 | `:person_with_turban:`                   | :person_with_turban:                   |
+| `:person_with_veil:`                     | :person_with_veil:                     |
 | `:peru:`                                 | :peru:                                 |
 | `:petri_dish:`                           | :petri_dish:                           |
 | `:philippines:`                          | :philippines:                          |
 | `:phone:`                                | :phone:                                |
 | `:pick:`                                 | :pick:                                 |
+| `:pickup_truck:`                         | :pickup_truck:                         |
 | `:pie:`                                  | :pie:                                  |
 | `:pig:`                                  | :pig:                                  |
 | `:pig2:`                                 | :pig2:                                 |
 | `:pig_nose:`                             | :pig_nose:                             |
 | `:pill:`                                 | :pill:                                 |
 | `:pilot:`                                | :pilot:                                |
+| `:pinata:`                               | :pinata:                               |
+| `:pinched_fingers:`                      | :pinched_fingers:                      |
 | `:pinching_hand:`                        | :pinching_hand:                        |
 | `:pineapple:`                            | :pineapple:                            |
 | `:ping_pong:`                            | :ping_pong:                            |
+| `:pink_heart:`                           | :pink_heart:                           |
 | `:pirate_flag:`                          | :pirate_flag:                          |
 | `:pisces:`                               | :pisces:                               |
 | `:pitcairn_islands:`                     | :pitcairn_islands:                     |
 | `:pizza:`                                | :pizza:                                |
+| `:placard:`                              | :placard:                              |
 | `:place_of_worship:`                     | :place_of_worship:                     |
 | `:plate_with_cutlery:`                   | :plate_with_cutlery:                   |
 | `:play_or_pause_button:`                 | :play_or_pause_button:                 |
+| `:playground_slide:`                     | :playground_slide:                     |
 | `:pleading_face:`                        | :pleading_face:                        |
+| `:plunger:`                              | :plunger:                              |
 | `:point_down:`                           | :point_down:                           |
 | `:point_left:`                           | :point_left:                           |
 | `:point_right:`                          | :point_right:                          |
 | `:point_up:`                             | :point_up:                             |
 | `:point_up_2:`                           | :point_up_2:                           |
 | `:poland:`                               | :poland:                               |
+| `:polar_bear:`                           | :polar_bear:                           |
 | `:police_car:`                           | :police_car:                           |
 | `:police_officer:`                       | :police_officer:                       |
 | `:policeman:`                            | :policeman:                            |
@@ -1258,9 +1369,11 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:postbox:`                              | :postbox:                              |
 | `:potable_water:`                        | :potable_water:                        |
 | `:potato:`                               | :potato:                               |
+| `:potted_plant:`                         | :potted_plant:                         |
 | `:pouch:`                                | :pouch:                                |
 | `:poultry_leg:`                          | :poultry_leg:                          |
 | `:pound:`                                | :pound:                                |
+| `:pouring_liquid:`                       | :pouring_liquid:                       |
 | `:pout:`                                 | :pout:                                 |
 | `:pouting_cat:`                          | :pouting_cat:                          |
 | `:pouting_face:`                         | :pouting_face:                         |
@@ -1268,6 +1381,8 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:pouting_woman:`                        | :pouting_woman:                        |
 | `:pray:`                                 | :pray:                                 |
 | `:prayer_beads:`                         | :prayer_beads:                         |
+| `:pregnant_man:`                         | :pregnant_man:                         |
+| `:pregnant_person:`                      | :pregnant_person:                      |
 | `:pregnant_woman:`                       | :pregnant_woman:                       |
 | `:pretzel:`                              | :pretzel:                              |
 | `:previous_track_button:`                | :previous_track_button:                |
@@ -1337,14 +1452,19 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:rice_cracker:`                         | :rice_cracker:                         |
 | `:rice_scene:`                           | :rice_scene:                           |
 | `:right_anger_bubble:`                   | :right_anger_bubble:                   |
+| `:rightwards_hand:`                      | :rightwards_hand:                      |
+| `:rightwards_pushing_hand:`              | :rightwards_pushing_hand:              |
 | `:ring:`                                 | :ring:                                 |
+| `:ring_buoy:`                            | :ring_buoy:                            |
 | `:ringed_planet:`                        | :ringed_planet:                        |
 | `:robot:`                                | :robot:                                |
+| `:rock:`                                 | :rock:                                 |
 | `:rocket:`                               | :rocket:                               |
 | `:rofl:`                                 | :rofl:                                 |
 | `:roll_eyes:`                            | :roll_eyes:                            |
 | `:roll_of_paper:`                        | :roll_of_paper:                        |
 | `:roller_coaster:`                       | :roller_coaster:                       |
+| `:roller_skate:`                         | :roller_skate:                         |
 | `:romania:`                              | :romania:                              |
 | `:rooster:`                              | :rooster:                              |
 | `:rose:`                                 | :rose:                                 |
@@ -1369,6 +1489,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:sailboat:`                             | :sailboat:                             |
 | `:sake:`                                 | :sake:                                 |
 | `:salt:`                                 | :salt:                                 |
+| `:saluting_face:`                        | :saluting_face:                        |
 | `:samoa:`                                | :samoa:                                |
 | `:san_marino:`                           | :san_marino:                           |
 | `:sandal:`                               | :sandal:                               |
@@ -1396,7 +1517,9 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:scotland:`                             | :scotland:                             |
 | `:scream:`                               | :scream:                               |
 | `:scream_cat:`                           | :scream_cat:                           |
+| `:screwdriver:`                          | :screwdriver:                          |
 | `:scroll:`                               | :scroll:                               |
+| `:seal:`                                 | :seal:                                 |
 | `:seat:`                                 | :seat:                                 |
 | `:secret:`                               | :secret:                               |
 | `:see_no_evil:`                          | :see_no_evil:                          |
@@ -1406,7 +1529,9 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:serbia:`                               | :serbia:                               |
 | `:service_dog:`                          | :service_dog:                          |
 | `:seven:`                                | :seven:                                |
+| `:sewing_needle:`                        | :sewing_needle:                        |
 | `:seychelles:`                           | :seychelles:                           |
+| `:shaking_face:`                         | :shaking_face:                         |
 | `:shallow_pan_of_food:`                  | :shallow_pan_of_food:                  |
 | `:shamrock:`                             | :shamrock:                             |
 | `:shark:`                                | :shark:                                |
@@ -1458,6 +1583,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:smile_cat:`                            | :smile_cat:                            |
 | `:smiley:`                               | :smiley:                               |
 | `:smiley_cat:`                           | :smiley_cat:                           |
+| `:smiling_face_with_tear:`               | :smiling_face_with_tear:               |
 | `:smiling_face_with_three_hearts:`       | :smiling_face_with_three_hearts:       |
 | `:smiling_imp:`                          | :smiling_imp:                          |
 | `:smirk:`                                | :smirk:                                |
@@ -1581,6 +1707,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:taiwan:`                               | :taiwan:                               |
 | `:tajikistan:`                           | :tajikistan:                           |
 | `:takeout_box:`                          | :takeout_box:                          |
+| `:tamale:`                               | :tamale:                               |
 | `:tanabata_tree:`                        | :tanabata_tree:                        |
 | `:tangerine:`                            | :tangerine:                            |
 | `:tanzania:`                             | :tanzania:                             |
@@ -1588,6 +1715,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:taxi:`                                 | :taxi:                                 |
 | `:tea:`                                  | :tea:                                  |
 | `:teacher:`                              | :teacher:                              |
+| `:teapot:`                               | :teapot:                               |
 | `:technologist:`                         | :technologist:                         |
 | `:teddy_bear:`                           | :teddy_bear:                           |
 | `:telephone:`                            | :telephone:                            |
@@ -1599,6 +1727,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:thailand:`                             | :thailand:                             |
 | `:thermometer:`                          | :thermometer:                          |
 | `:thinking:`                             | :thinking:                             |
+| `:thong_sandal:`                         | :thong_sandal:                         |
 | `:thought_balloon:`                      | :thought_balloon:                      |
 | `:thread:`                               | :thread:                               |
 | `:three:`                                | :three:                                |
@@ -1624,6 +1753,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:tongue:`                               | :tongue:                               |
 | `:toolbox:`                              | :toolbox:                              |
 | `:tooth:`                                | :tooth:                                |
+| `:toothbrush:`                           | :toothbrush:                           |
 | `:top:`                                  | :top:                                  |
 | `:tophat:`                               | :tophat:                               |
 | `:tornado:`                              | :tornado:                              |
@@ -1634,12 +1764,15 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:train:`                                | :train:                                |
 | `:train2:`                               | :train2:                               |
 | `:tram:`                                 | :tram:                                 |
+| `:transgender_flag:`                     | :transgender_flag:                     |
+| `:transgender_symbol:`                   | :transgender_symbol:                   |
 | `:triangular_flag_on_post:`              | :triangular_flag_on_post:              |
 | `:triangular_ruler:`                     | :triangular_ruler:                     |
 | `:trident:`                              | :trident:                              |
 | `:trinidad_tobago:`                      | :trinidad_tobago:                      |
 | `:tristan_da_cunha:`                     | :tristan_da_cunha:                     |
 | `:triumph:`                              | :triumph:                              |
+| `:troll:`                                | :troll:                                |
 | `:trolleybus:`                           | :trolleybus:                           |
 | `:trophy:`                               | :trophy:                               |
 | `:tropical_drink:`                       | :tropical_drink:                       |
@@ -1736,6 +1869,7 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:western_sahara:`                       | :western_sahara:                       |
 | `:whale:`                                | :whale:                                |
 | `:whale2:`                               | :whale2:                               |
+| `:wheel:`                                | :wheel:                                |
 | `:wheel_of_dharma:`                      | :wheel_of_dharma:                      |
 | `:wheelchair:`                           | :wheelchair:                           |
 | `:white_check_mark:`                     | :white_check_mark:                     |
@@ -1753,22 +1887,28 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:wilted_flower:`                        | :wilted_flower:                        |
 | `:wind_chime:`                           | :wind_chime:                           |
 | `:wind_face:`                            | :wind_face:                            |
+| `:window:`                               | :window:                               |
 | `:wine_glass:`                           | :wine_glass:                           |
+| `:wing:`                                 | :wing:                                 |
 | `:wink:`                                 | :wink:                                 |
+| `:wireless:`                             | :wireless:                             |
 | `:wolf:`                                 | :wolf:                                 |
 | `:woman:`                                | :woman:                                |
 | `:woman_artist:`                         | :woman_artist:                         |
 | `:woman_astronaut:`                      | :woman_astronaut:                      |
+| `:woman_beard:`                          | :woman_beard:                          |
 | `:woman_cartwheeling:`                   | :woman_cartwheeling:                   |
 | `:woman_cook:`                           | :woman_cook:                           |
 | `:woman_dancing:`                        | :woman_dancing:                        |
 | `:woman_facepalming:`                    | :woman_facepalming:                    |
 | `:woman_factory_worker:`                 | :woman_factory_worker:                 |
 | `:woman_farmer:`                         | :woman_farmer:                         |
+| `:woman_feeding_baby:`                   | :woman_feeding_baby:                   |
 | `:woman_firefighter:`                    | :woman_firefighter:                    |
 | `:woman_health_worker:`                  | :woman_health_worker:                  |
 | `:woman_in_manual_wheelchair:`           | :woman_in_manual_wheelchair:           |
 | `:woman_in_motorized_wheelchair:`        | :woman_in_motorized_wheelchair:        |
+| `:woman_in_tuxedo:`                      | :woman_in_tuxedo:                      |
 | `:woman_judge:`                          | :woman_judge:                          |
 | `:woman_juggling:`                       | :woman_juggling:                       |
 | `:woman_mechanic:`                       | :woman_mechanic:                       |
@@ -1785,17 +1925,21 @@ echo $converter->convertToHtml('This extension is great :smile:!');
 | `:woman_with_headscarf:`                 | :woman_with_headscarf:                 |
 | `:woman_with_probing_cane:`              | :woman_with_probing_cane:              |
 | `:woman_with_turban:`                    | :woman_with_turban:                    |
+| `:woman_with_veil:`                      | :woman_with_veil:                      |
 | `:womans_clothes:`                       | :womans_clothes:                       |
 | `:womans_hat:`                           | :womans_hat:                           |
 | `:women_wrestling:`                      | :women_wrestling:                      |
 | `:womens:`                               | :womens:                               |
+| `:wood:`                                 | :wood:                                 |
 | `:woozy_face:`                           | :woozy_face:                           |
 | `:world_map:`                            | :world_map:                            |
+| `:worm:`                                 | :worm:                                 |
 | `:worried:`                              | :worried:                              |
 | `:wrench:`                               | :wrench:                               |
 | `:wrestling:`                            | :wrestling:                            |
 | `:writing_hand:`                         | :writing_hand:                         |
 | `:x:`                                    | :x:                                    |
+| `:x_ray:`                                | :x_ray:                                |
 | `:yarn:`                                 | :yarn:                                 |
 | `:yawning_face:`                         | :yawning_face:                         |
 | `:yellow_circle:`                        | :yellow_circle:                        |
