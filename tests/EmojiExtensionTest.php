@@ -12,24 +12,34 @@ namespace ElGigi\CommonMarkEmoji\Tests;
 
 use ElGigi\CommonMarkEmoji\EmojiExtension;
 use ElGigi\CommonMarkEmoji\EmojiParser;
+use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment\Environment;
 use PHPUnit\Framework\TestCase;
 
 class EmojiExtensionTest extends TestCase
 {
-    public function testRegister()
+    public function testRegister(): void
     {
         $environment = new Environment();
         $environment->addExtension($extension = new EmojiExtension());
 
         $this->assertContains($extension, $environment->getExtensions());
+
+        $parsers = iterator_to_array($environment->getInlineParsers(), false);
+        $this->assertCount(
+            1,
+            array_filter($parsers, fn($parser): bool => $parser instanceof EmojiParser)
+        );
     }
 
-    public function test()
+    public function testConvert(): void
     {
-        $environment = new Environment();
-        $environment->addInlineParser($parser = new EmojiParser());
+        $converter = new CommonMarkConverter();
+        $converter->getEnvironment()->addExtension(new EmojiExtension());
 
-        $this->assertContains($parser, $environment->getInlineParsers());
+        $this->assertEquals(
+            '<p>This extension is great 😄!</p>',
+            rtrim((string)$converter->convert('This extension is great :smile:!'))
+        );
     }
 }
