@@ -33,6 +33,10 @@ $converter->getEnvironment()->addExtension(new EmojiExtension());
 echo $converter->convertToHtml('This extension is great :smile:!');
 ```
 
+An emoji code is replaced when it is not glued to a letter or a digit:
+`foo :smile:`, `(:smile:)` or `**:smile:**` are converted, `foo:smile:` or `10:30:45` are not.
+Codes are case-sensitive, and code spans and code blocks are left untouched.
+
 ## Updating the emoji list
 
 The list of emoji follows the [GitHub emoji](https://api.github.com/emojis) (custom images such as `:octocat:`

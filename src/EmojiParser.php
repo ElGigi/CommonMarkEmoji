@@ -21,20 +21,17 @@ final class EmojiParser implements InlineParserInterface
 {
     public function getMatchDefinition(): InlineParserMatch
     {
-        return InlineParserMatch::join(
-            InlineParserMatch::string(':'),
-            InlineParserMatch::regex('[\w\-+]+'),
-            InlineParserMatch::string(':'),
-        );
+        // Only the opening colon is consumed by the lookahead, so overlapping candidates are all tried
+        return InlineParserMatch::regex(':(?=[a-z0-9_+\-]+:)')->caseSensitive();
     }
 
     public function parse(InlineParserContext $inlineContext): bool
     {
         $cursor = $inlineContext->getCursor();
 
-        // The symbol must not have any other characters immediately prior
+        // The symbol must not be glued to a word or a number (e.g. "foo:bar:" or "10:30:45")
         $previousChar = $cursor->peek(-1);
-        if ($previousChar !== null && $previousChar !== ' ') {
+        if ($previousChar !== null && preg_match('/^[\p{L}\p{N}]$/u', $previousChar)) {
             // peek() doesn't modify the cursor, so no need to restore state first
             return false;
         }
@@ -45,22 +42,15 @@ final class EmojiParser implements InlineParserInterface
         // Advance past the symbol to keep parsing simpler
         $cursor->advance();
 
-        // Parse the emoji match value
-        $identifier = $cursor->match("/^[\w\-\+]+\:/i");
-        if ($identifier === null) {
-            // Regex failed to match; this isn't a valid emoji
+        $identifier = $cursor->match('/^[a-z0-9_+\-]+(?=:)/');
+        if ($identifier === null || !array_key_exists($identifier, Emoji::$codes)) {
             $cursor->restoreState($previousState);
 
             return false;
         }
 
-        $identifier = substr($identifier, 0, -1);
-
-        if (!array_key_exists($identifier, Emoji::$codes)) {
-            $cursor->restoreState($previousState);
-
-            return false;
-        }
+        // Advance past the closing symbol
+        $cursor->advance();
 
         $inlineContext->getContainer()->appendChild(new Text(Emoji::$codes[$identifier]));
 
